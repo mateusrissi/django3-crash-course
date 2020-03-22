@@ -47,8 +47,7 @@
 				{% for post in posts %}
 				<article class="col-6 col-12-xsmall work-item">
 					{% if post.image %}
-					<a href="{{ post.image.url }}" class="image fit thumb"><img
-							src="{{ post.image.url }}" alt="" /></a>
+					<a href="{{ post.image.url }}" class="image fit thumb"><img src="{{ post.image.url }}" alt="" /></a>
 					{% else %}
 					<a href="{% static 'images/fulls/01.jpg' %}" class="image fit thumb"><img
 							src="{% static 'images/thumbs/01.jpg' %}" alt="" /></a>
@@ -71,7 +70,8 @@
 				lorem semper nunc nisi lorem vulputate lorem neque lorem ipsum dolor.</p>
 			<div class="row">
 				<div class="col-8 col-12-small">
-					<form method="post" action="#">
+					<form method="post" action="{% url 'save_form' %}">
+						{% csrf_token %}
 						<div class="row gtr-uniform gtr-50">
 							<div class="col-6 col-12-xsmall"><input type="text" name="name" id="name"
 									placeholder="Name" /></div>
@@ -80,10 +80,8 @@
 							<div class="col-12"><textarea name="message" id="message" placeholder="Message"
 									rows="4"></textarea></div>
 						</div>
+						<input type="submit" value="Send Message" />
 					</form>
-					<ul class="actions">
-						<li><input type="submit" value="Send Message" /></li>
-					</ul>
 				</div>
 				<div class="col-4 col-12-small">
 					<ul class="labeled-icons">
