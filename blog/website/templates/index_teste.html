@@ -1,0 +1,15 @@
+<h1>Hello, blog!</h1>
+
+{{name}}
+
+<ul>
+    {% for item in tech_list %}
+    <li>{{item}}</li>
+    {% endfor %}
+</ul>
+
+
+
+{% for item in posts %}
+{{item.title}}
+{% endfor %}
