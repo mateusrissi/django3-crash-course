@@ -1,3 +1,5 @@
 venv
+media
 commands-sheet.txt
 .vscode
+db.sqlite3
